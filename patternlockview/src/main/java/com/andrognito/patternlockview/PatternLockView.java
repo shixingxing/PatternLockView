@@ -1219,9 +1219,10 @@ public class PatternLockView extends View {
 
         @Override
         public boolean equals(Object object) {
-            if (object instanceof Dot)
+            if (object instanceof Dot) {
                 return mColumn == ((Dot) object).mColumn
                         && mRow == ((Dot) object).mRow;
+            }
             return super.equals(object);
         }
 
