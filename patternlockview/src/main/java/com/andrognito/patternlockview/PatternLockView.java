@@ -32,14 +32,11 @@ import android.view.animation.Interpolator;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.Dimension;
-import androidx.annotation.IntDef;
 
 import com.andrognito.patternlockview.listener.PatternLockViewListener;
 import com.andrognito.patternlockview.utils.PatternLockUtils;
 import com.andrognito.patternlockview.utils.ResourceUtils;
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,9 +49,7 @@ public class PatternLockView extends View {
     /**
      * Represents the aspect ratio for the View
      */
-    @IntDef({ASPECT_RATIO_SQUARE, ASPECT_RATIO_WIDTH_BIAS, ASPECT_RATIO_HEIGHT_BIAS})
-    @Retention(RetentionPolicy.SOURCE)
-    public @interface AspectRatio {
+    public interface AspectRatio {
         // Width and height will be same. Minimum of width and height
         int ASPECT_RATIO_SQUARE = 0;
         // Width will be fixed. The height will be the minimum of width and height
@@ -66,9 +61,7 @@ public class PatternLockView extends View {
     /**
      * Represents the different modes in which this view can be represented
      */
-    @IntDef({CORRECT, AUTO_DRAW, WRONG})
-    @Retention(RetentionPolicy.SOURCE)
-    public @interface PatternViewMode {
+    public interface PatternViewMode {
         /**
          * This state represents a correctly drawn pattern by the user. The color of the path and
          * the dots both would be changed to this color.
@@ -424,6 +417,8 @@ public class PatternLockView extends View {
                 case MotionEvent.ACTION_HOVER_EXIT:
                     event.setAction(MotionEvent.ACTION_UP);
                     break;
+                default:
+                    break;
             }
             onTouchEvent(event);
             event.setAction(action);
@@ -459,6 +454,8 @@ public class PatternLockView extends View {
                     }
                 }
                 return true;
+            default:
+                break;
         }
         return false;
     }
@@ -472,7 +469,6 @@ public class PatternLockView extends View {
         return (List<Dot>) mPattern.clone();
     }
 
-    @PatternViewMode
     public int getPatternViewMode() {
         return mPatternViewMode;
     }
@@ -497,7 +493,6 @@ public class PatternLockView extends View {
         return mAspectRatioEnabled;
     }
 
-    @AspectRatio
     public int getAspectRatio() {
         return mAspectRatio;
     }
@@ -545,7 +540,7 @@ public class PatternLockView extends View {
      * @param patternViewMode The mode in which the pattern should be displayed
      * @param pattern         The pattern
      */
-    public void setPattern(@PatternViewMode int patternViewMode, List<Dot> pattern) {
+    public void setPattern(int patternViewMode, List<Dot> pattern) {
         mPattern.clear();
         mPattern.addAll(pattern);
         clearPatternDrawLookup();
@@ -560,7 +555,7 @@ public class PatternLockView extends View {
      * instance, after detecting a pattern to tell this view whether change the
      * in progress result to correct or wrong.
      */
-    public void setViewMode(@PatternViewMode int patternViewMode) {
+    public void setViewMode(int patternViewMode) {
         mPatternViewMode = patternViewMode;
         if (patternViewMode == AUTO_DRAW) {
             if (mPattern.size() == 0) {
@@ -600,7 +595,7 @@ public class PatternLockView extends View {
         requestLayout();
     }
 
-    public void setAspectRatio(@AspectRatio int aspectRatio) {
+    public void setAspectRatio(int aspectRatio) {
         mAspectRatio = aspectRatio;
         requestLayout();
     }
