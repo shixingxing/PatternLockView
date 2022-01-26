@@ -2,8 +2,9 @@ package com.andrognito.rxpatternlockview.observables;
 
 import com.andrognito.patternlockview.PatternLockView;
 
-import io.reactivex.Observable;
-import io.reactivex.Observer;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.Observer;
+
 
 /**
  * Created by aritraroy on 01/04/17.

@@ -1,5 +1,12 @@
 package com.andrognito.patternlockview;
 
+import static com.andrognito.patternlockview.PatternLockView.AspectRatio.ASPECT_RATIO_HEIGHT_BIAS;
+import static com.andrognito.patternlockview.PatternLockView.AspectRatio.ASPECT_RATIO_SQUARE;
+import static com.andrognito.patternlockview.PatternLockView.AspectRatio.ASPECT_RATIO_WIDTH_BIAS;
+import static com.andrognito.patternlockview.PatternLockView.PatternViewMode.AUTO_DRAW;
+import static com.andrognito.patternlockview.PatternLockView.PatternViewMode.CORRECT;
+import static com.andrognito.patternlockview.PatternLockView.PatternViewMode.WRONG;
+
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
@@ -14,9 +21,6 @@ import android.os.Debug;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.SystemClock;
-import android.support.annotation.ColorInt;
-import android.support.annotation.Dimension;
-import android.support.annotation.IntDef;
 import android.util.AttributeSet;
 import android.view.HapticFeedbackConstants;
 import android.view.MotionEvent;
@@ -26,6 +30,10 @@ import android.view.accessibility.AccessibilityManager;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
 
+import androidx.annotation.ColorInt;
+import androidx.annotation.Dimension;
+import androidx.annotation.IntDef;
+
 import com.andrognito.patternlockview.listener.PatternLockViewListener;
 import com.andrognito.patternlockview.utils.PatternLockUtils;
 import com.andrognito.patternlockview.utils.ResourceUtils;
@@ -34,13 +42,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
 import java.util.List;
-
-import static com.andrognito.patternlockview.PatternLockView.AspectRatio.ASPECT_RATIO_HEIGHT_BIAS;
-import static com.andrognito.patternlockview.PatternLockView.AspectRatio.ASPECT_RATIO_SQUARE;
-import static com.andrognito.patternlockview.PatternLockView.AspectRatio.ASPECT_RATIO_WIDTH_BIAS;
-import static com.andrognito.patternlockview.PatternLockView.PatternViewMode.AUTO_DRAW;
-import static com.andrognito.patternlockview.PatternLockView.PatternViewMode.CORRECT;
-import static com.andrognito.patternlockview.PatternLockView.PatternViewMode.WRONG;
 
 /**
  * Displays a powerful, customizable and Material Design complaint pattern lock in the screen which
@@ -1244,10 +1245,12 @@ public class PatternLockView extends View {
 
         public static final Creator<Dot> CREATOR = new Creator<Dot>() {
 
+            @Override
             public Dot createFromParcel(Parcel in) {
                 return new Dot(in);
             }
 
+            @Override
             public Dot[] newArray(int size) {
                 return new Dot[size];
             }
@@ -1331,10 +1334,12 @@ public class PatternLockView extends View {
         @SuppressWarnings("unused")
         public static final Creator<SavedState> CREATOR = new Creator<SavedState>() {
 
+            @Override
             public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
 
+            @Override
             public SavedState[] newArray(int size) {
                 return new SavedState[size];
             }

@@ -6,8 +6,8 @@ import com.andrognito.rxpatternlockview.events.PatternLockProgressEvent;
 
 import java.util.List;
 
-import io.reactivex.Observer;
-import io.reactivex.android.MainThreadDisposable;
+import io.reactivex.rxjava3.android.MainThreadDisposable;
+import io.reactivex.rxjava3.core.Observer;
 
 /**
  * Created by aritraroy on 01/04/17.

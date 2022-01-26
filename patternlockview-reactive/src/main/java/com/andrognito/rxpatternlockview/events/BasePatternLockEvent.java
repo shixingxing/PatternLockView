@@ -1,11 +1,12 @@
 package com.andrognito.rxpatternlockview.events;
 
-import android.support.annotation.Nullable;
 
 import com.andrognito.patternlockview.PatternLockView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import io.reactivex.rxjava3.annotations.Nullable;
 
 /**
  * Created by aritraroy on 01/04/17.

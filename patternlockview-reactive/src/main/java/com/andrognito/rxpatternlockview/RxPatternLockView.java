@@ -1,5 +1,7 @@
 package com.andrognito.rxpatternlockview;
 
+import static com.andrognito.rxpatternlockview.utils.Preconditions.checkNotNull;
+
 import com.andrognito.patternlockview.PatternLockView;
 import com.andrognito.rxpatternlockview.events.PatternLockCompleteEvent;
 import com.andrognito.rxpatternlockview.events.PatternLockCompoundEvent;
@@ -8,9 +10,7 @@ import com.andrognito.rxpatternlockview.observables.PatternLockViewCompleteObser
 import com.andrognito.rxpatternlockview.observables.PatternLockViewCompoundObservable;
 import com.andrognito.rxpatternlockview.observables.PatternLockViewProgressObservable;
 
-import io.reactivex.Observable;
-
-import static com.andrognito.rxpatternlockview.utils.Preconditions.checkNotNull;
+import io.reactivex.rxjava3.core.Observable;
 
 /**
  * Created by aritraroy on 27/03/17.

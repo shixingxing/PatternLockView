@@ -10,11 +10,15 @@ android {
         versionCode Integer.parseInt(project.VERSION_CODE)
         versionName project.VERSION_NAME
     }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
 }
 
 dependencies {
-    compile project(':patternlockview')
-    compile project(':patternlockview-reactive')
-    compile rootProject.ext.supportV7
-    compile rootProject.ext.rxJava
+    implementation project(':patternlockview')
+    implementation project(':patternlockview-reactive')
+    implementation rootProject.ext.appcompat
+    implementation rootProject.ext.rxJava
 }

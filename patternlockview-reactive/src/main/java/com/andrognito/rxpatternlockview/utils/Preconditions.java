@@ -2,7 +2,7 @@ package com.andrognito.rxpatternlockview.utils;
 
 import android.os.Looper;
 
-import io.reactivex.Observer;
+import io.reactivex.rxjava3.core.Observer;
 
 /**
  * Created by aritraroy on 02/04/17.

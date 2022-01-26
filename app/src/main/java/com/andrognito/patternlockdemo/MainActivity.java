@@ -1,10 +1,11 @@
 package com.andrognito.patternlockdemo;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.andrognito.patternlockview.PatternLockView;
 import com.andrognito.patternlockview.listener.PatternLockViewListener;
@@ -16,7 +17,8 @@ import com.andrognito.rxpatternlockview.events.PatternLockCompoundEvent;
 
 import java.util.List;
 
-import io.reactivex.functions.Consumer;
+import io.reactivex.rxjava3.functions.Consumer;
+
 
 public class MainActivity extends AppCompatActivity {
 

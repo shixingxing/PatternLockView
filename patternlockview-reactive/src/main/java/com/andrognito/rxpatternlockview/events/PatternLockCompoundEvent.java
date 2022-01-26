@@ -1,6 +1,12 @@
 package com.andrognito.rxpatternlockview.events;
 
-import android.support.annotation.IntDef;
+
+import static com.andrognito.rxpatternlockview.events.PatternLockCompoundEvent.EventType.PATTERN_CLEARED;
+import static com.andrognito.rxpatternlockview.events.PatternLockCompoundEvent.EventType.PATTERN_COMPLETE;
+import static com.andrognito.rxpatternlockview.events.PatternLockCompoundEvent.EventType.PATTERN_PROGRESS;
+import static com.andrognito.rxpatternlockview.events.PatternLockCompoundEvent.EventType.PATTERN_STARTED;
+
+import androidx.annotation.IntDef;
 
 import com.andrognito.patternlockview.PatternLockView;
 
@@ -8,10 +14,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.List;
 
-import static com.andrognito.rxpatternlockview.events.PatternLockCompoundEvent.EventType.PATTERN_CLEARED;
-import static com.andrognito.rxpatternlockview.events.PatternLockCompoundEvent.EventType.PATTERN_COMPLETE;
-import static com.andrognito.rxpatternlockview.events.PatternLockCompoundEvent.EventType.PATTERN_PROGRESS;
-import static com.andrognito.rxpatternlockview.events.PatternLockCompoundEvent.EventType.PATTERN_STARTED;
 
 /**
  * Created by aritraroy on 27/03/17.
